@@ -1,29 +1,23 @@
-import Image from "next/image";
+import ProductVariantProvider from "@/providers/product-variant-provider";
+import CarouselThumbnails from "@/components/carousel-thumbnails";
 import MainCarousel from "@/components/main-carousel";
-import productVariants from "@/consts/product-variants";
+import OptionSelector from "@/components/option-selector";
 
 export default function ProductDetail() {
   return (
     <main className="flex flex-col">
       <section className="flex *:basis-1/2">
-        <div className="grid grid-cols-6 grid-rows-5 gap-5">
-          {productVariants[0].images.map((image) => (
-            <Image
-              key={image.src}
-              src={image}
-              alt={image.alt}
-              width={256}
-              height={256}
-              className="rounded-xl object-cover object-center"
-            />
-          ))}
+        <ProductVariantProvider>
+          <div className="grid grid-cols-6 grid-rows-5 gap-5">
+            <CarouselThumbnails />
 
-          <div className="col-span-5 row-span-5 col-start-2 row-start-1">
-            <MainCarousel />
+            <div className="col-span-5 row-span-5 col-start-2 row-start-1">
+              <MainCarousel />
+            </div>
           </div>
-        </div>
 
-        <div></div>
+          <OptionSelector />
+        </ProductVariantProvider>
       </section>
     </main>
   );
