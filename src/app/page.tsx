@@ -1,13 +1,13 @@
 import Image from "next/image";
 import MainCarousel from "@/components/main-carousel";
-import images from "@/consts/images";
+import productVariants from "@/consts/product-variants";
 
 export default function ProductDetail() {
   return (
     <main className="flex flex-col">
       <section className="flex *:basis-1/2">
         <div className="grid grid-cols-6 grid-rows-5 gap-5">
-          {images.map((image) => (
+          {productVariants[0].images.map((image) => (
             <Image
               key={image.src}
               src={image}

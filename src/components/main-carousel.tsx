@@ -3,13 +3,13 @@
 import Image from "next/image";
 import Autoplay from "embla-carousel-autoplay";
 import { Carousel, CarouselContent, CarouselItem } from "./ui/carousel";
-import images from "@/consts/images";
+import productVariants from "@/consts/product-variants";
 
 const MainCarousel = () => {
   return (
     <Carousel
       className="rounded-xl overflow-hidden bg-contain bg-center before:content-[''] before:backdrop-blur-3xl before:absolute before:inset-0 before:bg-white/50"
-      style={{ backgroundImage: `url(${images[0].src})` }}
+      style={{ backgroundImage: `url(${productVariants[0].images[0].src})` }}
       plugins={[
         Autoplay({
           delay: 3000,
@@ -17,7 +17,7 @@ const MainCarousel = () => {
       ]}
     >
       <CarouselContent className="-ml-0">
-        {images.map((image) => {
+        {productVariants[0].images.map((image) => {
           return (
             <CarouselItem key={image.src} className="pl-0">
               <Image
