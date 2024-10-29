@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import MaterialSymbolsShoppingCart from "~icons/material-symbols/shopping-cart.jsx";
+import MaterialSymbolsPerson from "~icons/material-symbols/person.jsx";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -26,9 +28,39 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased font-geist-sans overflow-x-hidden`}
       >
-        {children}
+        <div className="w-full aspect-square absolute bg-white rounded-full translate-x-1/4 -translate-y-1/4 -z-10" />
+
+        <div className="px-24 flex flex-col">
+          <header className="py-12 flex items-center gap-14">
+            <button>
+              <h1 className="uppercase font-bold text-primary text-xl">
+                Homely.
+              </h1>
+            </button>
+
+            <div className="ml-auto flex gap-14 [&_*:has(svg)]:text-primary">
+              <button>Home</button>
+
+              <button>About</button>
+
+              <button>Shop</button>
+
+              <button>Contact</button>
+
+              <button>
+                <MaterialSymbolsShoppingCart fontSize={20} />
+              </button>
+
+              <button className="border border-primary rounded-full p-1">
+                <MaterialSymbolsPerson fontSize={20} />
+              </button>
+            </div>
+          </header>
+
+          {children}
+        </div>
       </body>
     </html>
   );

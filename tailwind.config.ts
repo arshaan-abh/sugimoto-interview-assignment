@@ -11,6 +11,12 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        primary: "var(--primary)",
+        secondary: "var(--secondary)",
+      },
+      fontFamily: {
+        "geist-sans": "var(--font-geist-sans)",
+        "geist-mono": "var(--font-geist-mono)",
       },
     },
   },
