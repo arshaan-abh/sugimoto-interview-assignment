@@ -65,3 +65,10 @@ export default function RootLayout({
     </html>
   );
 }
+
+/* TODO list:
+   Add a readme file
+   Product detail component
+   Product option selector component
+   Product reviews component
+*/
