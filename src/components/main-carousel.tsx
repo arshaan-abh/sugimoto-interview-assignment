@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import Autoplay from "embla-carousel-autoplay";
 import { Carousel, CarouselContent, CarouselItem } from "./ui/carousel";
 import images from "@/consts/images";
 
@@ -7,6 +10,11 @@ const MainCarousel = () => {
     <Carousel
       className="rounded-xl overflow-hidden bg-contain bg-center before:content-[''] before:backdrop-blur-3xl before:absolute before:inset-0 before:bg-white/50"
       style={{ backgroundImage: `url(${images[0].src})` }}
+      plugins={[
+        Autoplay({
+          delay: 3000,
+        }),
+      ]}
     >
       <CarouselContent className="-ml-0">
         {images.map((image) => {
