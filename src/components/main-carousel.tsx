@@ -21,13 +21,17 @@ const MainCarousel = () => {
       plugins={[
         Autoplay({
           delay: 3000,
+          stopOnInteraction: false,
         }),
       ]}
     >
       <CarouselContent className="-ml-0">
-        {foundProductVariant?.images.map((image) => {
+        {foundProductVariant?.images.map((image, index) => {
           return (
-            <CarouselItem key={image.src} className="pl-0">
+            <CarouselItem key={index} className="pl-0">
+              {/* I used the index as a key, even though I shouldn't have.
+              However, I had a reason for doing so:
+              I didn’t want changing the variant to reset the carousel. */}
               <Image
                 src={image}
                 alt={image.alt}

@@ -1,5 +1,6 @@
 import { FC, useCallback, useMemo, useState } from "react";
 import { Rating as RatingType } from "@/interfaces/review";
+import { cn } from "@/lib/utils";
 import MaterialSymbolsKidStar from "~icons/material-symbols/kid-star.jsx";
 import MaterialSymbolsKidStarOutline from "~icons/material-symbols/kid-star-outline.jsx";
 
@@ -8,6 +9,7 @@ interface RatingProps {
   onRate: (rating: RatingType) => void;
   maxRating?: number;
   ratingsLength?: number;
+  className?: string;
 }
 
 const Rating: FC<RatingProps> = ({
@@ -15,6 +17,7 @@ const Rating: FC<RatingProps> = ({
   maxRating = 5,
   onRate,
   ratingsLength,
+  className,
 }) => {
   const [rating, setRating] = useState(initialRating);
   const [rated, setRated] = useState(false);
@@ -44,7 +47,7 @@ const Rating: FC<RatingProps> = ({
   const roundedRating = useMemo(() => Math.round(rating), [rating]);
 
   return (
-    <div className="flex items-center gap-2">
+    <div className={cn("flex items-center gap-2", className)}>
       <div
         className="flex items-center text-yellow-500"
         onMouseLeave={handleMouseLeave}
@@ -73,7 +76,9 @@ const Rating: FC<RatingProps> = ({
       </div>
 
       {ratingsLength && (
-        <div>({rated ? ratingsLength + 1 : ratingsLength})</div>
+        <div className="font-medium text-lg opacity-75">
+          ({rated ? ratingsLength + 1 : ratingsLength})
+        </div>
       )}
     </div>
   );
