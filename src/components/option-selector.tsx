@@ -5,6 +5,7 @@ import { ProductVariantContext } from "@/providers/product-variant-provider";
 import { getUniqueColors, getUniqueSizes } from "@/lib/get-uniqe-variants";
 import { cn } from "@/lib/utils";
 import useFoundProductVariant from "@/hooks/use-find-product-variant";
+import MaterialSymbolsBookmarkHeartRounded from "~icons/material-symbols/bookmark-heart-rounded.jsx";
 
 const OptionSelector = () => {
   const { variant, setVariant } = useContext(ProductVariantContext);
@@ -19,7 +20,7 @@ const OptionSelector = () => {
   // const averageRating = useAveraging(foundRatings);
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col justify-between">
       <h2 className="font-bold text-3xl mb-2">{foundProductVariant?.title}</h2>
 
       {/* <Rating
@@ -62,6 +63,30 @@ const OptionSelector = () => {
             {size}
           </button>
         ))}
+      </div>
+
+      <div
+        className="mb-2 flex items-center text-lg "
+        title={foundProductVariant?.description}
+      >
+        <p className="line-clamp-1">{foundProductVariant?.description}</p>
+      </div>
+
+      <div
+        className="grid grid-cols-12 grid-rows-2 gap-y-5 gap-x-2"
+        title="This section does not work."
+      >
+        <button className="col-span-11 bg-secondary rounded-xl font-medium text-lg text-primary">
+          Add To Cart
+        </button>
+
+        <button className="col-span-1 rounded-xl border border-primary flex items-center justify-center aspect-square text-primary">
+          <MaterialSymbolsBookmarkHeartRounded fontSize={32} />
+        </button>
+
+        <button className="col-span-12 bg-primary rounded-xl font-medium text-lg text-white">
+          Buy Now
+        </button>
       </div>
     </div>
   );
