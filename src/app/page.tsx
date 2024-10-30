@@ -8,7 +8,7 @@ export default function ProductDetail() {
     <main className="flex flex-col">
       <section className="flex *:basis-1/2 gap-8 xl:gap-16 flex-col md:flex-row">
         <ProductVariantProvider>
-          <div className="grid grid-cols-6 grid-rows-5 gap-5">
+          <div className="grid grid-cols-6 grid-rows-5 gap-2 sm:gap-5">
             <CarouselThumbnails />
 
             <div className="col-span-5 row-span-5 col-start-2 row-start-1">
