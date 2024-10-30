@@ -17,7 +17,7 @@ const CarouselThumbnails = () => {
       alt={image.alt}
       width={256}
       height={256}
-      className="rounded-xl object-cover object-center"
+      className="rounded-xl object-cover object-center h-full"
     />
   ));
 };

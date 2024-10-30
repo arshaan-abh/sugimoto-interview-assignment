@@ -73,14 +73,14 @@ const OptionSelector = () => {
       </div>
 
       <div
-        className="grid grid-cols-12 grid-rows-2 gap-y-5 gap-x-2"
+        className="grid grid-cols-12 grid-rows-2 gap-2"
         title="This section does not work."
       >
-        <button className="col-span-11 bg-secondary rounded-xl font-medium text-lg text-primary">
+        <button className="col-span-10 bg-secondary rounded-xl font-medium text-lg text-primary">
           Add To Cart
         </button>
 
-        <button className="col-span-1 rounded-xl border border-primary flex items-center justify-center aspect-square text-primary">
+        <button className="col-span-2 rounded-xl border border-primary flex items-center justify-center text-primary">
           <MaterialSymbolsBookmarkHeartRounded fontSize={32} />
         </button>
 

@@ -31,9 +31,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased font-geist-sans overflow-x-hidden`}
       >
-        <div className="w-full aspect-square absolute bg-white rounded-full translate-x-1/4 -translate-y-1/4 -z-10" />
+        <div className="w-full aspect-square fixed bg-white rounded-full translate-x-1/4 -translate-y-1/4 -z-10" />
 
-        <div className="px-24 flex flex-col">
+        <div className="flex flex-col px-12 lg:px-24 2xl:px-48">
           <header className="py-12 flex items-center gap-14 mb-12">
             <button>
               <h1 className="uppercase font-bold text-primary text-xl">
@@ -62,6 +62,8 @@ export default function RootLayout({
 
           {children}
         </div>
+
+        <footer className="h-32" />
       </body>
     </html>
   );

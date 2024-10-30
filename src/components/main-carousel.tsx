@@ -14,7 +14,7 @@ const MainCarousel = () => {
 
   return (
     <Carousel
-      className="rounded-xl overflow-hidden bg-contain bg-center before:content-[''] before:backdrop-blur-3xl before:absolute before:inset-0 before:bg-white/50"
+      className="rounded-xl overflow-hidden bg-contain bg-center before:content-[''] before:backdrop-blur-3xl before:absolute before:inset-0 before:bg-white/50 h-full [&>*]:h-full"
       style={{
         backgroundImage: `url(${foundProductVariant?.images[0].src})`,
       }}
@@ -25,7 +25,7 @@ const MainCarousel = () => {
         }),
       ]}
     >
-      <CarouselContent className="-ml-0">
+      <CarouselContent className="-ml-0 h-full">
         {foundProductVariant?.images.map((image, index) => {
           return (
             <CarouselItem key={index} className="pl-0">
@@ -37,7 +37,7 @@ const MainCarousel = () => {
                 alt={image.alt}
                 width={1024}
                 height={1024}
-                className="object-cover object-center"
+                className="object-cover object-center h-full"
               />
             </CarouselItem>
           );
