@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import MaterialSymbolsShoppingCart from "~icons/material-symbols/shopping-cart.jsx";
 import MaterialSymbolsPerson from "~icons/material-symbols/person.jsx";
+import MaterialSymbolsMenuOpenRounded from "~icons/material-symbols/menu-open-rounded.jsx";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -41,7 +42,7 @@ export default function RootLayout({
               </h1>
             </button>
 
-            <div className="ml-auto flex gap-14 [&_*:has(svg)]:text-primary">
+            <div className="ml-auto gap-14 [&_*:has(svg)]:text-primary hidden md:flex">
               <button>Home</button>
 
               <button>About</button>
@@ -58,6 +59,10 @@ export default function RootLayout({
                 <MaterialSymbolsPerson fontSize={20} />
               </button>
             </div>
+
+            <button className="ml-auto border border-primary rounded-full p-1 text-primary md:hidden">
+              <MaterialSymbolsMenuOpenRounded fontSize={20} />
+            </button>
           </header>
 
           {children}

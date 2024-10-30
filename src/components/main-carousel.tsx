@@ -14,7 +14,7 @@ const MainCarousel = () => {
 
   return (
     <Carousel
-      className="rounded-xl overflow-hidden bg-contain bg-center before:content-[''] before:backdrop-blur-3xl before:absolute before:inset-0 before:bg-white/50 h-full [&>*]:h-full"
+      className="rounded-xl overflow-hidden bg-contain bg-center before:content-[''] before:backdrop-blur-3xl before:rounded-xl before:absolute before:inset-0 before:bg-white/50 h-full [&>*]:h-full"
       style={{
         backgroundImage: `url(${foundProductVariant?.images[0].src})`,
       }}
