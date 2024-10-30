@@ -1,4 +1,6 @@
 export default interface Review {
-  rating: 1 | 2 | 3 | 4 | 5;
+  rating: Rating;
   text?: string;
 }
+
+export type Rating = number;

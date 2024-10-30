@@ -6,7 +6,7 @@ import OptionSelector from "@/components/option-selector";
 export default function ProductDetail() {
   return (
     <main className="flex flex-col">
-      <section className="flex *:basis-1/2">
+      <section className="flex *:basis-1/2 gap-16">
         <ProductVariantProvider>
           <div className="grid grid-cols-6 grid-rows-5 gap-5">
             <CarouselThumbnails />

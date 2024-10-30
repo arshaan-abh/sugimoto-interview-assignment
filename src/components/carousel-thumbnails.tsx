@@ -3,12 +3,14 @@
 import { useContext } from "react";
 import { ProductVariantContext } from "@/providers/product-variant-provider";
 import Image from "next/image";
-import findProductVariant from "@/lib/find-product-variant";
+import useFoundProductVariant from "@/hooks/use-find-product-variant";
 
 const CarouselThumbnails = () => {
   const { variant } = useContext(ProductVariantContext);
 
-  return findProductVariant(variant)?.images.map((image) => (
+  const foundProductVariant = useFoundProductVariant(variant);
+
+  return foundProductVariant?.images.map((image) => (
     <Image
       key={image.src}
       src={image}
