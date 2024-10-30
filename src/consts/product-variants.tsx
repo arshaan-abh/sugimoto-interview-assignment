@@ -29,10 +29,6 @@ const productVariants: ProductVariant[] = [
       { ...image4, alt: "Red Classic T-Shirt - Small" },
       { ...image5, alt: "Red Classic T-Shirt - Small" },
     ],
-    reviews: [
-      { rating: 4, text: "Comfortable and great quality!" },
-      { rating: 5, text: "My favorite go-to shirt." },
-    ],
   },
   {
     title: "Classic T-Shirt",
@@ -47,7 +43,6 @@ const productVariants: ProductVariant[] = [
       { ...image6, alt: "Red Classic T-Shirt - Medium" },
       { ...image7, alt: "Red Classic T-Shirt - Medium" },
     ],
-    reviews: [{ rating: 4, text: "Perfect fit and color." }],
   },
   {
     title: "Classic T-Shirt",
@@ -62,7 +57,6 @@ const productVariants: ProductVariant[] = [
       { ...image9, alt: "Red Classic T-Shirt - Large" },
       { ...image10, alt: "Red Classic T-Shirt - Large" },
     ],
-    reviews: [{ rating: 5, text: "Great for casual wear." }],
   },
   {
     title: "Classic T-Shirt",
@@ -76,9 +70,6 @@ const productVariants: ProductVariant[] = [
       { ...image13, alt: "Blue Classic T-Shirt - Small" },
       { ...image14, alt: "Blue Classic T-Shirt - Small" },
       { ...image15, alt: "Blue Classic T-Shirt - Small" },
-    ],
-    reviews: [
-      { rating: 3, text: "Good quality, but the color was slightly off." },
     ],
   },
   {
@@ -94,10 +85,6 @@ const productVariants: ProductVariant[] = [
       { ...image2, alt: "Blue Classic T-Shirt - Medium" },
       { ...image3, alt: "Blue Classic T-Shirt - Medium" },
     ],
-    reviews: [
-      { rating: 4, text: "Love the fit and the fabric!" },
-      { rating: 2, text: "A bit too large for a medium size." },
-    ],
   },
   {
     title: "Classic T-Shirt",
@@ -111,10 +98,6 @@ const productVariants: ProductVariant[] = [
       { ...image10, alt: "Blue Classic T-Shirt - Large" },
       { ...image11, alt: "Blue Classic T-Shirt - Large" },
       { ...image12, alt: "Blue Classic T-Shirt - Large" },
-    ],
-    reviews: [
-      { rating: 5, text: "Love the fit and the fabric!" },
-      { rating: 1, text: "A bit too small for a large size." },
     ],
   },
   {
@@ -130,10 +113,6 @@ const productVariants: ProductVariant[] = [
       { ...image1, alt: "Black Premium Hoodie - Small" },
       { ...image2, alt: "Black Premium Hoodie - Small" },
     ],
-    reviews: [
-      { rating: 5, text: "Super comfortable, feels premium!" },
-      { rating: 4, text: "Nice hoodie but a bit pricey." },
-    ],
   },
   {
     title: "Premium Hoodie",
@@ -147,10 +126,6 @@ const productVariants: ProductVariant[] = [
       { ...image5, alt: "Black Premium Hoodie - Medium" },
       { ...image6, alt: "Black Premium Hoodie - Medium" },
       { ...image7, alt: "Black Premium Hoodie - Medium" },
-    ],
-    reviews: [
-      { rating: 5, text: "Super comfortable, feels premium!" },
-      { rating: 4, text: "Nice hoodie but a bit pricey." },
     ],
   },
   {
@@ -166,10 +141,6 @@ const productVariants: ProductVariant[] = [
       { ...image8, alt: "Black Premium Hoodie - Large" },
       { ...image1, alt: "Black Premium Hoodie - Large" },
     ],
-    reviews: [
-      { rating: 5, text: "Super comfortable, feels premium!" },
-      { rating: 4, text: "Nice hoodie but a bit pricey." },
-    ],
   },
   {
     title: "Premium Hoodie",
@@ -183,10 +154,6 @@ const productVariants: ProductVariant[] = [
       { ...image13, alt: "Gray Premium Hoodie - Small" },
       { ...image14, alt: "Gray Premium Hoodie - Small" },
       { ...image15, alt: "Gray Premium Hoodie - Small" },
-    ],
-    reviews: [
-      { rating: 4, text: "Great for layering." },
-      { rating: 3, text: "Runs slightly large." },
     ],
   },
   {
@@ -202,10 +169,6 @@ const productVariants: ProductVariant[] = [
       { ...image6, alt: "Gray Premium Hoodie - Medium" },
       { ...image11, alt: "Gray Premium Hoodie - Medium" },
     ],
-    reviews: [
-      { rating: 4, text: "Great for layering." },
-      { rating: 3, text: "Runs slightly large." },
-    ],
   },
   {
     title: "Premium Hoodie",
@@ -219,10 +182,6 @@ const productVariants: ProductVariant[] = [
       { ...image6, alt: "Gray Premium Hoodie - Large" },
       { ...image8, alt: "Gray Premium Hoodie - Large" },
       { ...image10, alt: "Gray Premium Hoodie - Large" },
-    ],
-    reviews: [
-      { rating: 4, text: "Great for layering." },
-      { rating: 3, text: "Runs slightly large." },
     ],
   },
   {
@@ -238,10 +197,6 @@ const productVariants: ProductVariant[] = [
       { ...image12, alt: "Green Basic Tank Top - Small" },
       { ...image15, alt: "Green Basic Tank Top - Small" },
     ],
-    reviews: [
-      { rating: 5, text: "Perfect for summer!" },
-      { rating: 4, text: "Light and breathable." },
-    ],
   },
   {
     title: "Basic Tank Top",
@@ -256,7 +211,6 @@ const productVariants: ProductVariant[] = [
       { ...image1, alt: "Green Basic Tank Top - Medium" },
       { ...image5, alt: "Green Basic Tank Top - Medium" },
     ],
-    reviews: [{ rating: 3, text: "Good quality but slightly transparent." }],
   },
   {
     title: "Basic Tank Top",
@@ -271,7 +225,6 @@ const productVariants: ProductVariant[] = [
       { ...image3, alt: "Green Basic Tank Top - Large" },
       { ...image4, alt: "Green Basic Tank Top - Large" },
     ],
-    reviews: [{ rating: 3, text: "Good quality but slightly transparent." }],
   },
 ];
 
