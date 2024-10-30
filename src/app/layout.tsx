@@ -72,4 +72,7 @@ export default function RootLayout({
    Product detail component
    Product option selector component
    Product reviews component
+   Extras:
+      Add a "sold out" or "out of stock" state for some variants that don't exist
+      Connect the thumbnails to the main carousel
 */
