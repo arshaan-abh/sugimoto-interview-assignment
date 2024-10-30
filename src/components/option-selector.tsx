@@ -39,7 +39,7 @@ const OptionSelector = () => {
           <button
             key={color}
             className={cn(
-              "w-12 h-12 rounded-full transition-shadow",
+              "w-8 h-8 rounded-full transition-shadow",
               color === variant.color && "ring-1 ring-offset-2 ring-stone-400"
             )}
             style={{ backgroundColor: color }}
@@ -54,7 +54,7 @@ const OptionSelector = () => {
           <button
             key={size}
             className={cn(
-              "w-12 h-12 rounded-full bg-stone-200 flex items-center justify-center transition-shadow",
+              "w-8 h-8 rounded-full bg-stone-200 flex items-center justify-center transition-shadow",
               variant.size === size && "ring-1 ring-offset-2 ring-stone-400"
             )}
             onClick={() => setVariant({ size, color: variant.color })}
