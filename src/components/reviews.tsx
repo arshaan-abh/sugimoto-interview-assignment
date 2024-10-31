@@ -44,7 +44,7 @@ export const ReviewsSkeleton = () => {
       {[...Array(2)].map((_, index) => (
         <Skeleton
           key={index}
-          className="h-44 rounded-xl bg-white/75 shadow border"
+          className="h-44 rounded-xl bg-slate-100/75 shadow border"
         />
       ))}
     </div>
