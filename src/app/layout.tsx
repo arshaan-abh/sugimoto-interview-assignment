@@ -88,7 +88,7 @@ export default function RootLayout({
    Product option selector component - Done
    Product reviews component - Done
    Extras:
-      Connect the thumbnails to the main carousel
+      Connect the thumbnails to the main carousel - Done
       Add a "sold out" or "out of stock" state for some variants that don't exist
       Reset form after successful submission
 */

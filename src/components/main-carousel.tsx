@@ -2,19 +2,38 @@
 
 import Image from "next/image";
 import Autoplay from "embla-carousel-autoplay";
-import { Carousel, CarouselContent, CarouselItem } from "./ui/carousel";
+import {
+  Carousel,
+  CarouselApi,
+  CarouselContent,
+  CarouselItem,
+} from "./ui/carousel";
 import { ProductVariantContext } from "@/providers/product-variant-provider";
-import { useContext } from "react";
+import { CarouselContext } from "@/providers/carousel-provider";
+import { useContext, useEffect, useState } from "react";
 import useFoundProductVariant from "@/hooks/use-find-product-variant";
 
 const MainCarousel = () => {
+  const [api, setApi] = useState<CarouselApi>();
+
   const { variant } = useContext(ProductVariantContext);
 
+  const { activeIndex, setActiveIndex } = useContext(CarouselContext);
+
   const foundProductVariant = useFoundProductVariant(variant);
+
+  useEffect(() => {
+    if (api) api.on("select", () => setActiveIndex(api.selectedScrollSnap()));
+  }, [api, setActiveIndex]);
+
+  useEffect(() => {
+    if (api) api.scrollTo(activeIndex);
+  }, [activeIndex, api]);
 
   return (
     <Carousel
       className="rounded-xl overflow-hidden bg-contain bg-center before:content-[''] before:backdrop-blur-3xl before:rounded-xl before:absolute before:inset-0 before:bg-secondary/50 h-full [&>*]:h-full"
+      setApi={setApi}
       style={{
         backgroundImage: `url(${foundProductVariant?.images[0].src})`,
       }}

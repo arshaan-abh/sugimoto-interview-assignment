@@ -1,5 +1,6 @@
 import { Suspense } from "react";
 import ProductVariantProvider from "@/providers/product-variant-provider";
+import CarouselProvider from "@/providers/carousel-provider";
 import Section from "@/components/ui/section";
 import CarouselThumbnails from "@/components/carousel-thumbnails";
 import MainCarousel from "@/components/main-carousel";
@@ -13,11 +14,13 @@ export default function ProductDetail() {
       <Section>
         <ProductVariantProvider>
           <div className="grid grid-cols-6 grid-rows-5 gap-2 sm:gap-5">
-            <CarouselThumbnails />
+            <CarouselProvider>
+              <CarouselThumbnails />
 
-            <div className="col-span-5 row-span-5 col-start-2 row-start-1">
-              <MainCarousel />
-            </div>
+              <div className="col-span-5 row-span-5 col-start-2 row-start-1">
+                <MainCarousel />
+              </div>
+            </CarouselProvider>
           </div>
 
           <OptionSelector />
