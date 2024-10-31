@@ -83,11 +83,11 @@ export default function RootLayout({
 }
 
 /* TODO list:
-   Add a readme file
+   Add a readme file - Almost done
    Product detail component - Done
    Product option selector component - Done
-   Product reviews component
+   Product reviews component - Done
    Extras:
-      Add a "sold out" or "out of stock" state for some variants that don't exist
       Connect the thumbnails to the main carousel
+      Add a "sold out" or "out of stock" state for some variants that don't exist
 */
