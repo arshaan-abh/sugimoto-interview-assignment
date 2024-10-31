@@ -10,6 +10,7 @@ interface RatingProps {
   maxRating?: number;
   ratingsLength?: number;
   className?: string;
+  oneTimeUse?: boolean;
 }
 
 const Rating: FC<RatingProps> = ({
@@ -18,30 +19,33 @@ const Rating: FC<RatingProps> = ({
   onRate,
   ratingsLength,
   className,
+  oneTimeUse,
 }) => {
   const [rating, setRating] = useState(initialRating);
   const [rated, setRated] = useState(false);
+  const [disabled, setDisabled] = useState(false);
 
   const handleMouseEnter = useCallback(
     (rating: RatingType) => {
-      if (!rated) setRating(rating);
+      if (!disabled) setRating(rating);
     },
-    [rated]
+    [disabled]
   );
 
   const handleMouseLeave = useCallback(() => {
-    if (!rated) setRating(initialRating);
-  }, [initialRating, rated]);
+    if (!disabled) setRating(initialRating);
+  }, [disabled, initialRating]);
 
   const handleClick = useCallback(
     (rating: RatingType) => {
-      if (!rated) {
+      if (!disabled) {
         setRating(rating);
         onRate(rating);
         setRated(true);
+        if (oneTimeUse) setDisabled(true);
       }
     },
-    [onRate, rated]
+    [disabled, onRate, oneTimeUse]
   );
 
   const roundedRating = useMemo(() => Math.round(rating), [rating]);
@@ -57,7 +61,8 @@ const Rating: FC<RatingProps> = ({
             key={"filled-" + index}
             onMouseEnter={() => handleMouseEnter(index + 1)}
             onClick={() => handleClick(index + 1)}
-            disabled={rated}
+            disabled={disabled}
+            type="button"
           >
             <MaterialSymbolsKidStar />
           </button>
@@ -68,7 +73,8 @@ const Rating: FC<RatingProps> = ({
             key={"empty-" + index}
             onMouseEnter={() => handleMouseEnter(index + roundedRating + 1)}
             onClick={() => handleClick(index + roundedRating + 1)}
-            disabled={rated}
+            disabled={disabled}
+            type="button"
           >
             <MaterialSymbolsKidStarOutline />
           </button>

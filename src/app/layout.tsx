@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import NavigationLinks from "@/components/navigation-links";
 import MaterialSymbolsMenuOpenRounded from "~icons/material-symbols/menu-open-rounded.jsx";
+import { Toaster } from "@/components/ui/sonner";
 import {
   SheetTrigger,
   SheetContent,
@@ -74,6 +75,8 @@ export default function RootLayout({
         </div>
 
         <footer className="h-32" />
+
+        <Toaster />
       </body>
     </html>
   );
