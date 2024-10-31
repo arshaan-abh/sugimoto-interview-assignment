@@ -76,7 +76,7 @@ export default function RootLayout({
 
         <footer className="h-32" />
 
-        <Toaster />
+        <Toaster richColors={true} />
       </body>
     </html>
   );
