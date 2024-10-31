@@ -42,7 +42,10 @@ export const ReviewsSkeleton = () => {
   return (
     <div className="flex flex-col gap-5">
       {[...Array(2)].map((_, index) => (
-        <Skeleton key={index} className="h-44 rounded-xl bg-white/75" />
+        <Skeleton
+          key={index}
+          className="h-44 rounded-xl bg-white/75 shadow border"
+        />
       ))}
     </div>
   );
