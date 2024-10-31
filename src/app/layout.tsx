@@ -90,4 +90,5 @@ export default function RootLayout({
    Extras:
       Connect the thumbnails to the main carousel
       Add a "sold out" or "out of stock" state for some variants that don't exist
+      Reset form after successful submission
 */
