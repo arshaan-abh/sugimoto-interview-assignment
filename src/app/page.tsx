@@ -1,14 +1,16 @@
 import { Suspense } from "react";
 import ProductVariantProvider from "@/providers/product-variant-provider";
+import Section from "@/components/ui/section";
 import CarouselThumbnails from "@/components/carousel-thumbnails";
 import MainCarousel from "@/components/main-carousel";
 import OptionSelector from "@/components/option-selector";
-import Reviews from "@/components/reviews";
+import SubmitReview from "@/components/submit-review";
+import Reviews, { ReviewsSkeleton } from "@/components/reviews";
 
 export default function ProductDetail() {
   return (
     <main className="flex flex-col gap-16">
-      <section className="flex *:basis-1/2 gap-8 xl:gap-16 flex-col md:flex-row">
+      <Section>
         <ProductVariantProvider>
           <div className="grid grid-cols-6 grid-rows-5 gap-2 sm:gap-5">
             <CarouselThumbnails />
@@ -20,13 +22,15 @@ export default function ProductDetail() {
 
           <OptionSelector />
         </ProductVariantProvider>
-      </section>
+      </Section>
 
-      <section>
-        <Suspense fallback={<div>Loading...</div>}>
+      <Section>
+        <SubmitReview />
+
+        <Suspense fallback={<ReviewsSkeleton />}>
           <Reviews />
         </Suspense>
-      </section>
+      </Section>
     </main>
   );
 }
