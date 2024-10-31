@@ -1,3 +1,5 @@
+"use client";
+
 import { FC, useCallback, useMemo, useState } from "react";
 import { Rating as RatingType } from "@/interfaces/review";
 import { cn } from "@/lib/utils";
@@ -6,11 +8,12 @@ import MaterialSymbolsKidStarOutline from "~icons/material-symbols/kid-star-outl
 
 interface RatingProps {
   rating: RatingType;
-  onRate: (rating: RatingType) => void;
+  onRate?: (rating: RatingType) => void;
   maxRating?: number;
   ratingsLength?: number;
   className?: string;
   oneTimeUse?: boolean;
+  disabled?: boolean;
 }
 
 const Rating: FC<RatingProps> = ({
@@ -20,10 +23,11 @@ const Rating: FC<RatingProps> = ({
   ratingsLength,
   className,
   oneTimeUse,
+  disabled: initialDisabled,
 }) => {
   const [rating, setRating] = useState(initialRating);
   const [rated, setRated] = useState(false);
-  const [disabled, setDisabled] = useState(false);
+  const [disabled, setDisabled] = useState(initialDisabled);
 
   const handleMouseEnter = useCallback(
     (rating: RatingType) => {
@@ -40,7 +44,7 @@ const Rating: FC<RatingProps> = ({
     (rating: RatingType) => {
       if (!disabled) {
         setRating(rating);
-        onRate(rating);
+        onRate?.(rating);
         setRated(true);
         if (oneTimeUse) setDisabled(true);
       }
